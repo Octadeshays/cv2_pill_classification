@@ -4,7 +4,7 @@ class SimpleSiameseNetwork(nn.Module):
     def __init__(self):
         super(SimpleSiameseNetwork, self).__init__()
         self.convnet = nn.Sequential(
-            nn.Conv2d(3, 64, kernel_size=10), 
+            nn.Conv2d(3, 64, kernel_size=10),
             nn.ReLU(),
             nn.MaxPool2d(2, 2),
             nn.Conv2d(64, 128, kernel_size=7),
@@ -15,9 +15,12 @@ class SimpleSiameseNetwork(nn.Module):
             nn.MaxPool2d(2, 2),
             nn.Conv2d(128, 256, kernel_size=4),
             nn.ReLU(),
+            nn.MaxPool2d(2, 2),
         )
+        
+        
         self.fc = nn.Sequential(
-            nn.Linear(256*6*6, 4096),
+            nn.Linear(256 * 12 * 12, 4096),
             nn.ReLU(),
             nn.Linear(4096, 256)
         )
