@@ -46,5 +46,3 @@ class SimpleSiameseNetwork(nn.Module):
         # Aplicar sigmoide para obtener una probabilidad entre 0 y 1
         prob = torch.sigmoid(score)
         return prob
-        return output1, output2
-
