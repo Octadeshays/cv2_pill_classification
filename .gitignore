@@ -1,2 +1,4 @@
 data/*
 .venv/*
+checkpoints/*
+!checkpoints/.gitkeep
